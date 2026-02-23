@@ -32,30 +32,27 @@ This is a **full-stack** resume maker application with advanced AI capabilities,
 ## 📁 Project Structure
 
 ```
-Resume maker app code/
-├── Frontend/
-│   ├── index.html          # Main HTML structure
-│   ├── styles.css          # Advanced CSS with animations
-│   └── script.js           # JavaScript for interactivity
-├── Backend/
-│   ├── server.js           # Express server
-│   ├── package.json        # Dependencies
-│   ├── .env.example        # Environment variables template
-│   ├── models/
-│   │   ├── User.js         # User model
-│   │   ├── Resume.js       # Resume model
-│   │   └── Template.js     # Template model
-│   ├── routes/
-│   │   ├── auth.js         # Authentication routes
-│   │   ├── resume.js       # Resume CRUD routes
-│   │   ├── ai.js           # AI enhancement routes
-│   │   ├── ats.js          # ATS checker routes
-│   │   └── template.js     # Template routes
-│   ├── middleware/
-│   │   └── auth.js         # JWT authentication middleware
-│   └── seed.js             # Database seeder
-├── API_DOCUMENTATION.md    # Complete API docs
-└── README.md               # This file
+ResumeAI_Pro/
+├── index.html              # Landing Page
+├── login.html              # Authentication Page
+├── dashboard.html          # User Dashboard
+├── editor.html             # Resume Builder Interface
+├── templates.html          # Template Gallery
+├── ats-analysis.html       # ATS Analysis Tool
+├── styles.css              # Main Theme Styles
+├── script.js               # Frontend Logic
+├── server.js               # Node.js/Express Backend
+├── package.json            # Node.js Dependencies
+├── .env.example            # Environment Template
+├── backend/                # Java/Spring Boot Backend (Microservice)
+│   ├── pom.xml             # Maven Configuration
+│   └── src/                # Java Source Code
+├── models/                 # Database Models (Mongoose)
+├── routes/                 # API Routes (Express)
+├── middleware/             # Security & Auth Middlewares
+├── API_DOCUMENTATION.md    # API Reference
+├── LICENSE                 # MIT License
+└── README.md               # Project Documentation
 ```
 
 ## 🚀 How to Run
