@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success! - ResumeAI Pro</title>
+    <meta name="description" content="Your resume is ready! Download and start applying.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="success-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="futuristic-dark-page">
+    <!-- Noise & Grain Layer -->
+    <div class="noise-overlay"></div>
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar futuristic">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z" fill="#fff" />
+                </svg>
+                <span class="logo-text">ResumeAI Pro <span class="version">v2.0</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="templates.html">Templates</a>
+                <a href="profile.html">Profile</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-minimal" onclick="window.location.href='dashboard.html'">My Resumes</button>
+                <button class="btn-minimal" onclick="window.location.href='profile.html'">Profile</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Section -->
+    <section class="success-section">
+        <div class="container">
+            <!-- Success Animation -->
+            <div class="success-animation">
+                <div class="checkmark-circle">
+                    <svg class="checkmark" width="120" height="120" viewBox="0 0 120 120">
+                        <circle class="checkmark-circle-bg" cx="60" cy="60" r="54" />
+                        <circle class="checkmark-circle-check" cx="60" cy="60" r="54" />
+                        <path class="checkmark-check" d="M35 60L52 77L85 44" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message">
+                <div class="hero-badge" style="margin-bottom: 1.5rem;">
+                    <span class="badge-icon">🎉</span>
+                    <span>RESUME COMPLETED</span>
+                </div>
+                <h1 class="success-title">
+                    <span class="gradient-text">Success!</span> Your Resume is Ready. 🎉
+                </h1>
+                <p class="success-description">
+                    Your career journey just got a <span class="highlight-success">head start!</span> 👏
+                    We've optimized your profile to <span class="highlight-text">stand out</span> to top recruiters.
+                </p>
+            </div>
+
+            <!-- Download Options -->
+            <div class="download-options">
+                <div class="download-card primary">
+                    <div class="download-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="url(#pdfGradient)" />
+                            <path d="M24 16V28M24 28L28 24M24 28L20 24" stroke="white" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M16 32H32" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="pdfGradient" x1="0" y1="0" x2="48" y2="48">
+                                    <stop offset="0%" stop-color="#667eea" />
+                                    <stop offset="100%" stop-color="#764ba2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="download-info">
+                        <h3>Download PDF</h3>
+                        <p>Best for printing & applications</p>
+                        <span class="recommended-badge">⭐ Recommended</span>
+                    </div>
+                    <button class="btn-download-primary">
+                        Download PDF
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 3V13M10 13L13 10M10 13L7 10" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M3 17H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="#4facfe" />
+                            <path d="M16 16H32V32H16V16Z" stroke="white" stroke-width="2.5" stroke-linejoin="round" />
+                            <path d="M20 22H28M20 26H28" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="download-info">
+                        <h3>Download Word</h3>
+                        <p>Editable .docx format</p>
+                    </div>
+                    <button class="btn-download-secondary">
+                        Download Word
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="success-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">ATS Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Keywords Matched</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✨</div>
+                    <div class="stat-value">AI</div>
+                    <div class="stat-label">Enhanced</div>
+                </div>
+            </div>
+
+            <!-- What's Next Section -->
+            <div class="whats-next-section">
+                <h2 class="section-title">
+                    What's <span class="gradient-text">Next</span> for You?
+                </h2>
+                <div class="next-steps-grid">
+                    <div class="next-step-card">
+                        <div class="step-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="10" fill="#667eea" opacity="0.1" />
+                                <path d="M20 12V20L24 24" stroke="#667eea" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="20" cy="20" r="8" stroke="#667eea" stroke-width="2.5" />
+                            </svg>
+                        </div>
+                        <h3>Prepare for Interviews</h3>
+                        <p>Learn how to answer tough questions and make a great first impression.</p>
+                        <a href="#" class="step-link">Read Guide →</a>
+                    </div>
+
+                    <div class="next-step-card">
+                        <div class="step-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="10" fill="#f093fb" opacity="0.1" />
+                                <path d="M14 20H26M20 14V26" stroke="#f093fb" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3>Optimize LinkedIn</h3>
+                        <p>Transfer your new resume content to your LinkedIn profile effectively.</p>
+                        <a href="#" class="step-link">Watch Tutorial →</a>
+                    </div>
+
+                    <div class="next-step-card">
+                        <div class="step-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="10" fill="#4facfe" opacity="0.1" />
+                                <path d="M12 20L18 26L28 14" stroke="#4facfe" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3>Networking 101</h3>
+                        <p>Discover strategies to connect with recruiters in your target industry.</p>
+                        <a href="#" class="step-link">Get Tips →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Pro Tip -->
+            <div class="ai-tip-card">
+                <div class="ai-tip-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <rect width="48" height="48" rx="12" fill="url(#tipGradient)" />
+                        <path d="M24 16L26 22L32 24L26 26L24 32L22 26L16 24L22 22L24 16Z" fill="white" />
+                        <defs>
+                            <linearGradient id="tipGradient" x1="0" y1="0" x2="48" y2="48">
+                                <stop offset="0%" stop-color="#667eea" />
+                                <stop offset="100%" stop-color="#764ba2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="ai-tip-content">
+                    <div class="ai-tip-badge">AI PRO-TIP</div>
+                    <p class="ai-tip-text">
+                        "Remember to tailor your cover letter for each specific job description. This simple step can
+                        increase your interview chances by up to 40%!"
+                    </p>
+                </div>
+                <button class="btn-ai-builder">Try AI Cover Letter Builder</button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="final-actions">
+                <button class="btn-secondary-large" onclick="window.location.href='dashboard.html'">
+                    Back to Dashboard
+                </button>
+                <button class="btn-primary-large" onclick="window.location.href='editor.html'">
+                    Create New Resume
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 5V15M5 10H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Footer Note -->
+            <div class="footer-note">
+                <p>
+                    <strong>Usage:</strong> 3/5 resumes created this month
+                    <a href="#" class="upgrade-link">Upgrade Plan →</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="paymentModal" class="modal-overlay hidden" style="z-index: 9999;">
+        <div class="modal-card" style="max-width: 500px; background: #fff; color: #333; text-align: left;">
+            <div
+                style="background:var(--primary-gradient); padding: 1.5rem; margin: -2.5rem -2.5rem 1.5rem; border-radius: var(--radius-lg) var(--radius-lg) 0 0; color:white; text-align:center;">
+                <h2 style="margin:0;">Pro Upgrade Required</h2>
+                <p style="opacity:0.9;">Export your premium resume</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <p>You have created a <strong>General/Professional</strong> resume. To download this premium template
+                    without watermarks, please unlock the full version.</p>
+                <div
+                    style="background:#f5f7ff; padding:1rem; border-radius:8px; margin:1rem 0; border:1px solid #e0e7ff;">
+                    <div style="display:flex; justify-content:space-between; font-weight:bold; margin-bottom:0.5rem;">
+                        <span>Single Resume Export</span>
+                        <span>$4.99</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; color:#666; font-size:0.9rem;">
+                        <span>Includes PDF & Docx</span>
+                        <span style="color:#22c55e;">One-time fee</span>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem; color:#666;">* Students verify their ID for 100% free access.</p>
+            </div>
+
+            <button class="btn-download-primary" style="width:100%; justify-content:center;" onclick="processPayment()">
+                Unlock & Download ($4.99)
+            </button>
+            <button onclick="closePaymentModal()"
+                style="width:100%; background:none; border:none; color:#666; margin-top:1rem; cursor:pointer; text-decoration:underline;">Continue
+                editing</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client-frontend.js"></script>
+    <script src="script.js"></script>
+    <script src="success-script.js"></script>
+    <script>
+        // Check User Role on Download
+        function checkDownloadPermission(type) {
+            const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+            if (user.role === 'student') {
+                // Free for students
+                alert(`Downloading ${type} resume... (Student License Applied)`);
+                // Trigger real download logic here (omitted for demo)
+            } else {
+                // Paywall for General
+                document.getElementById('paymentModal').classList.remove('hidden');
+                document.getElementById('paymentModal').style.display = 'flex';
+            }
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').classList.add('hidden');
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function processPayment() {
+            const btn = document.querySelector('#paymentModal .btn-download-primary');
+            btn.innerHTML = 'Processing...';
+            setTimeout(() => {
+                alert('Payment Successful! Downloading resume...');
+                closePaymentModal();
+                btn.innerHTML = 'Unlock & Download ($4.99)';
+            }, 1500);
+        }
+
+        // Attach listeners to existing buttons
+        document.querySelector('.btn-download-primary').onclick = () => checkDownloadPermission('PDF');
+        document.querySelector('.btn-download-secondary').onclick = () => checkDownloadPermission('Word');
+    </script>
+</body>
+
+</html>

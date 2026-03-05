@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic ATS Analysis | ResumeAI Pro</title>
+    <meta name="description" content="Futuristic AI-powered ATS score analysis with high-contrast minimal UI.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ats-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="futuristic-dark-page">
+    <!-- Noise & Grain Layer -->
+    <div class="noise-overlay"></div>
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar futuristic">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z" fill="#fff" />
+                </svg>
+                <span class="logo-text">ResumeAI Pro <span class="version">v2.0</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="templates.html">Templates</a>
+                <a href="profile.html">Profile</a>
+            </div>
+            <div class="nav-actions">
+                <!-- script.js will handle this -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-container">
+        <div class="dashboard-grid">
+
+            <!-- Left Panel: Score & Overview -->
+            <section class="panel panel-left animate-in">
+                <div class="panel-header">
+                    <span class="status-dot"></span>
+                    <span class="panel-title">SYSTEM ANALYSIS</span>
+                    <span class="timestamp" id="liveTime">00:00:00</span>
+                </div>
+
+                <div class="score-centering">
+                    <div class="circular-progress-container">
+                        <svg viewBox="0 0 200 200" class="progress-svg">
+                            <circle cx="100" cy="100" r="90" class="progress-bg"></circle>
+                            <circle cx="100" cy="100" r="90" class="progress-fill" id="mainProgress"></circle>
+                        </svg>
+                        <div class="score-data">
+                            <span class="score-value" id="scoreValue">0</span>
+                            <span class="score-label">MATCH RATE</span>
+                            <div class="confidence-indicator" id="confidenceLevel">
+                                <span class="conf-dot"></span>
+                                <span class="conf-text">AI CONFIDENCE: 98%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-summary">
+                    <h2 id="statusTitle">INITIALIZING...</h2>
+                    <p id="statusMessage">Scanning resume architecture for ATS compatibility.</p>
+                </div>
+
+                <div class="action-zone">
+                    <button class="btn-rescan-minimal" onclick="location.reload()">
+                        <span class="btn-icon">↺</span> RE-RUN ANALYSIS
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Panel: Breakdown & Details -->
+            <section class="panel panel-right animate-in-delayed">
+                <div class="breakdown-grid">
+
+                    <!-- Section: Skills Match -->
+                    <div class="dashboard-card card-skills">
+                        <div class="card-header">
+                            <h3>SKILLS MATCH</h3>
+                            <span class="percent" id="skillsPercent">0%</span>
+                        </div>
+                        <div class="mini-bar-container">
+                            <div class="mini-bar-fill" id="skillsBar"></div>
+                        </div>
+                        <div class="tag-cloud" id="skillsCloud">
+                            <!-- Tags will be injected -->
+                        </div>
+                    </div>
+
+                    <!-- Section: Experience Match -->
+                    <div class="dashboard-card card-exp">
+                        <div class="card-header">
+                            <h3>EXPERIENCE MATCH</h3>
+                            <span class="percent" id="expPercent">0%</span>
+                        </div>
+                        <div class="mini-bar-container">
+                            <div class="mini-bar-fill" id="expBar"></div>
+                        </div>
+                        <p class="card-detail" id="expDetail">Analyzing tenure and responsibility density...</p>
+                    </div>
+
+                    <!-- Section: Keyword Optimization -->
+                    <div class="dashboard-card card-keywords">
+                        <div class="card-header">
+                            <h3>KEYWORD DENSITY</h3>
+                            <span class="percent" id="keywordPercent">0%</span>
+                        </div>
+                        <div class="mini-bar-container">
+                            <div class="mini-bar-fill" id="keywordBar"></div>
+                        </div>
+                        <div class="keyword-status-grid">
+                            <div class="stat-box">
+                                <span class="label">FOUND</span>
+                                <span class="val" id="foundCount">0</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="label">MISSING</span>
+                                <span class="val danger" id="missingCount">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-card card-prediction full-width">
+                    <div class="card-header">
+                        <h3>ABSOLUTE ATS PREDICTION</h3>
+                        <span class="prediction-rating" id="predictionRating">OPTIMIZED</span>
+                    </div>
+                    <div class="prediction-content">
+                        <div class="prediction-item">
+                            <span class="p-label">Recruiter Impact</span>
+                            <div class="p-bar">
+                                <div class="p-bar-fill" id="recImpactBar"></div>
+                            </div>
+                            <span class="p-val" id="recImpactVal">0%</span>
+                        </div>
+                        <div class="prediction-item">
+                            <span class="p-label">Formatting Accuracy</span>
+                            <div class="p-bar">
+                                <div class="p-bar-fill" id="formatAccBar"></div>
+                            </div>
+                            <span class="p-val" id="formatAccVal">0%</span>
+                        </div>
+                        <div class="prediction-item">
+                            <span class="p-label">Content Depth</span>
+                            <div class="p-bar">
+                                <div class="p-bar-fill" id="contentDepthBar"></div>
+                            </div>
+                            <span class="p-val" id="contentDepthVal">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Recommendations -->
+                <div class="recommendations-container">
+                    <div class="panel-header minified">
+                        <span class="panel-title">AI OPTIMIZATION STRATEGY</span>
+                    </div>
+                    <div class="recommendations-scroll" id="recommendationsList">
+                        <!-- Cards will be injected -->
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Star Dropping logic kept for previous requirement but styled minimally -->
+    <div id="star-shower-container" class="star-shower-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client-frontend.js"></script>
+    <script src="script.js"></script>
+    <script src="ats-script.js"></script>
+</body>
+
+</html>

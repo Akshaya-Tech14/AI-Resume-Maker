@@ -1,0 +1,103 @@
+/* ==========================================
+   RESUME SHOWCASE (Templates)
+   ========================================== */
+.resume-showcase {
+    background: transparent !important;
+    padding: 6rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.template-card {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease;
+    border: 1px solid var(--f-border);
+    background: var(--f-panel-bg);
+    border-radius: var(--radius-lg);
+}
+
+.template-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.template-preview {
+    height: 250px;
+    width: 100%;
+    background: #1a1a2e;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monitor-style .screen-content {
+    width: 80%;
+    height: 85%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Simulated Resume Layouts inside the preview */
+.bg-modern {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    position: relative;
+}
+
+.bg-modern::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+}
+
+.bg-creative {
+    background: #fff;
+    position: relative;
+    border-left: 50px solid #ff6b6b;
+}
+
+.bg-executive {
+    background: #f0f0f0;
+    border-top: 40px solid #1a1a2e;
+}
+
+.template-info {
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--f-border);
+}
+
+.template-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: 600;
+}
+
+.template-category {
+    font-size: 0.9rem;
+    color: var(--f-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.full-width {
+    width: 100%;
+}

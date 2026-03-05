@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - ResumeAI Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resume-showcase.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .dashboard-header {
+            padding: 8rem 2rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dashboard-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .resume-card {
+            background: var(--f-panel-bg);
+            border: 1px solid var(--f-border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .resume-preview-mini {
+            height: 180px;
+            background: #1a1a2e;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-info h3 {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .resume-date {
+            font-size: 0.85rem;
+            color: var(--f-text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .resume-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 0.5rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border: 1px solid var(--f-border);
+            background: transparent;
+            color: white;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .action-btn.edit {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .action-btn.edit:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .action-btn.delete {
+            color: var(--f-danger);
+            border-color: rgba(255, 68, 68, 0.3);
+        }
+
+        .action-btn.delete:hover {
+            background: rgba(255, 68, 68, 0.1);
+        }
+
+        .create-new-card {
+            border: 2px dashed var(--f-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .create-new-card:hover {
+            border-color: var(--primary-color);
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .plus-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--f-text-secondary);
+        }
+
+        .create-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-badge.draft {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        .status-badge.optimized {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+        }
+    </style>
+</head>
+
+<body class="futuristic-dark-page">
+    <div class="noise-overlay"></div>
+    <div class="grain-overlay"></div>
+
+    <nav class="navbar futuristic">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z" fill="#fff" />
+                </svg>
+                <span class="logo-text">ResumeAI Pro <span class="version">v2.0</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="templates.html">Templates</a>
+                <a href="profile.html">Profile</a>
+            </div>
+            <div class="nav-actions">
+                <!-- script.js will handle this -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-header">
+        <div>
+            <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">My Resumes</h1>
+            <p style="color: var(--f-text-secondary);">Manage and optimize your career documents</p>
+        </div>
+        <button class="btn-primary" onclick="window.location.href='editor.html?new=true'">+ New Resume</button>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- New Resume Card -->
+        <div class="resume-card create-new-card" onclick="window.location.href='editor.html?new=true'">
+            <div class="plus-icon">+</div>
+            <div class="create-text">Create New Resume</div>
+        </div>
+
+        <!-- Existing Resume 1 -->
+        <div class="resume-card">
+            <div class="status-badge optimized">ATS Score: 92</div>
+            <div class="resume-preview-mini monitor-style">
+                <div class="screen-content bg-modern"
+                    style="transform: scale(0.8); width: 100%; height: 100%; top: 0; left: 0; border-radius: 0;"></div>
+            </div>
+            <div class="resume-info">
+                <h3>Senior Software Engineer</h3>
+                <p class="resume-date">Updated 2 days ago</p>
+            </div>
+            <div class="resume-actions">
+                <button class="action-btn edit" onclick="window.location.href='editor.html'">Edit</button>
+                <div style="width: 10px;"></div>
+                <button class="action-btn edit" style="color: var(--f-success); border-color: rgba(0,255,136,0.3);"
+                    onclick="window.location.href='ats-analysis.html'">Check Score</button>
+            </div>
+        </div>
+
+        <!-- Existing Resume 2 -->
+        <div class="resume-card">
+            <div class="status-badge draft">Draft</div>
+            <div class="resume-preview-mini monitor-style">
+                <div class="screen-content bg-executive"
+                    style="transform: scale(0.8); width: 100%; height: 100%; top: 0; left: 0; border-radius: 0;"></div>
+            </div>
+            <div class="resume-info">
+                <h3>Product Manager Role</h3>
+                <p class="resume-date">Updated 1 week ago</p>
+            </div>
+            <div class="resume-actions">
+                <button class="action-btn edit" onclick="window.location.href='editor.html'">Edit</button>
+                <div style="width: 10px;"></div>
+                <button class="action-btn edit" style="color: var(--f-success); border-color: rgba(0,255,136,0.3);"
+                    onclick="window.location.href='ats-analysis.html'">Check Score</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client-frontend.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const supabase = window.supabaseApp.client;
+            const isSupabaseConfigured = !supabase.supabaseUrl.includes('placeholder');
+            const dashboardGrid = document.querySelector('.dashboard-grid');
+
+            if (isSupabaseConfigured && user.isSupabase) {
+                try {
+                    const { data: resumes, error } = await supabase
+                        .from('resumes')
+                        .select('*')
+                        .order('updated_at', { ascending: false });
+
+                    if (error) throw error;
+
+                    // Clear demo resumes (except the "Create New" card)
+                    const createCard = document.querySelector('.create-new-card');
+                    dashboardGrid.innerHTML = '';
+                    dashboardGrid.appendChild(createCard);
+
+                    if (resumes && resumes.length > 0) {
+                        resumes.forEach(resume => {
+                            const card = createResumeCard(resume);
+                            dashboardGrid.appendChild(card);
+                        });
+                    }
+                } catch (err) {
+                    console.error('Error fetching resumes:', err);
+                }
+            }
+        });
+
+        function createResumeCard(resume) {
+            const div = document.createElement('div');
+            div.className = 'resume-card';
+            const updatedAt = new Date(resume.updated_at).toLocaleDateString();
+
+            div.innerHTML = `
+                <div class="status-badge ${resume.ats_score > 80 ? 'optimized' : 'draft'}">
+                    ${resume.ats_score > 0 ? 'ATS Score: ' + resume.ats_score : 'Draft'}
+                </div>
+                <div class="resume-preview-mini monitor-style">
+                    <div class="screen-content bg-${resume.template_id || 'modern'}"
+                        style="transform: scale(0.8); width: 100%; height: 100%; top: 0; left: 0; border-radius: 0;"></div>
+                </div>
+                <div class="resume-info">
+                    <h3>${resume.title || 'Untitled Resume'}</h3>
+                    <p class="resume-date">Updated ${updatedAt}</p>
+                </div>
+                <div class="resume-actions">
+                    <button class="action-btn edit" onclick="window.location.href='editor.html?id=${resume.id}'">Edit</button>
+                    <button class="action-btn edit" style="color: var(--f-success); border-color: rgba(0,255,136,0.3);"
+                        onclick="window.location.href='ats-analysis.html?id=${resume.id}'">Check Score</button>
+                </div>
+            `;
+            return div;
+        }
+    </script>
+</body>
+
+</html>

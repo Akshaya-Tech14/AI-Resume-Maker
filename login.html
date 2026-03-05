@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up - ResumeAI Pro</title>
+    <meta name="description" content="Log in to your ResumeAI account to access your professional resumes.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .hidden {
+            display: none !important;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="futuristic-dark-page">
+    <!-- Noise & Grain Layer -->
+    <div class="noise-overlay"></div>
+    <div class="grain-overlay"></div>
+
+    <!-- Background Stars -->
+    <div class="stars-container">
+        <div class="star" style="top: 10%; left: 20%; width: 2px; height: 2px; animation-duration: 3s;"></div>
+        <div class="star" style="top: 30%; left: 80%; width: 3px; height: 3px; animation-duration: 4s;"></div>
+        <div class="star" style="top: 70%; left: 40%; width: 2px; height: 2px; animation-duration: 5s;"></div>
+        <div class="star" style="top: 50%; left: 10%; width: 1px; height: 1px; animation-duration: 6s;"></div>
+        <div class="star" style="top: 80%; left: 90%; width: 2px; height: 2px; animation-duration: 4.5s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar futuristic">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z" fill="#fff" />
+                </svg>
+                <span class="logo-text">ResumeAI Pro <span class="version">v2.0</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#templates">Templates</a>
+                <a href="styles.css">Pricing</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-minimal" onclick="window.location.href='index.html'">Back to Home</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-card">
+            <div class="login-header">
+                <h1 class="login-title" id="formTitle">Welcome Back</h1>
+                <p class="login-subtitle" id="formSubtitle">Enter your credentials to access your account</p>
+            </div>
+
+            <form class="login-form" id="authForm" action="#" method="POST">
+
+                <!-- Error Message Container -->
+                <div id="errorMsg" class="error-message hidden">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span id="errorText">Invalid credentials</span>
+                </div>
+
+                <!-- Name Field (Hidden for Login) -->
+                <div class="form-group hidden" id="nameGroup">
+                    <label for="name" class="form-label">Full Name</label>
+                    <div class="form-input-container">
+                        <span class="input-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                        <input type="text" id="name" class="form-input" placeholder="John Doe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="form-input-container">
+                        <span class="input-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </span>
+                        <input type="email" id="email" class="form-input" placeholder="name@company.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="form-input-container">
+                        <span class="input-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </span>
+                        <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <!-- User Type Selection (Free for Students) -->
+                <div class="form-group hidden" id="typeGroup">
+                    <label class="form-label">I am a:</label>
+                    <div class="user-type-selector" style="display:flex; gap:1rem; margin-top:0.5rem;">
+                        <label class="radio-label"
+                            style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; background:rgba(255,255,255,0.05); padding:0.5rem 1rem; border-radius:8px; border:1px solid var(--f-border); flex:1;">
+                            <input type="radio" name="userType" value="student" checked
+                                onchange="toggleOnboardingFields()">
+                            <span>Student (Free)</span>
+                        </label>
+                        <label class="radio-label"
+                            style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; background:rgba(255,255,255,0.05); padding:0.5rem 1rem; border-radius:8px; border:1px solid var(--f-border); flex:1;">
+                            <input type="radio" name="userType" value="general" onchange="toggleOnboardingFields()">
+                            <span>General/Pro</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Student Specific Fields -->
+                <div id="studentFields" class="fade-in">
+                    <div class="form-group">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" id="dob" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Education Level</label>
+                        <select id="eduLevel" class="form-input" style="background:#0a0a0a;">
+                            <option value="school">School</option>
+                            <option value="college">College/University</option>
+                        </select>
+                    </div>
+                    <div id="schoolVerify" class="form-group">
+                        <label for="institution" class="form-label">School/College Name</label>
+                        <input type="text" id="institution" class="form-input" placeholder="Enter your institution">
+                    </div>
+                </div>
+
+                <!-- General Specific Fields -->
+                <div id="generalFields" class="hidden fade-in">
+                    <div class="form-group">
+                        <label for="profession" class="form-label">Profession</label>
+                        <input type="text" id="profession" class="form-input" placeholder="e.g. Software Engineer">
+                    </div>
+                    <div class="form-group">
+                        <label for="experience" class="form-label">Years of Experience</label>
+                        <input type="number" id="experience" class="form-input" placeholder="e.g. 5">
+                    </div>
+                    <div class="form-group">
+                        <label for="expectations" class="form-label">Expectations</label>
+                        <textarea id="expectations" class="form-input"
+                            placeholder="What do you expect from this resume?"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-options" id="loginOptions">
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked>
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-login" id="submitBtn">Sign In</button>
+
+                <div class="social-login">
+                    <div class="social-divider">
+                        <span>Or continue with</span>
+                    </div>
+                    <div class="social-buttons">
+                        <button type="button" class="btn-social" id="btnGoogle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                            Google
+                        </button>
+                        <button type="button" class="btn-social">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.285 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="login-footer">
+                <p id="toggleText">Don't have an account? <a href="#" class="login-link">Sign up</a></p>
+                <div style="margin-top: 1rem;">
+                    <button type="button" id="demoLoginBtn" class="btn-minimal"
+                        style="font-size: 0.8rem; padding: 0.5rem 1rem; border: 1px dashed var(--f-border); opacity: 0.7;">
+                        ✨ Auto-fill Demo Credentials
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verification Modal Removed -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client-frontend.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Check if already logged in
+        if (localStorage.getItem('currentUser')) {
+            window.location.href = 'index.html';
+        }
+
+        // Auto-fill Demo Logic
+        document.getElementById('demoLoginBtn').addEventListener('click', () => {
+            // Ensure we are in login mode
+            if (!isLoginMode) {
+                document.querySelector('.login-link').click(); // Switch to login
+            }
+
+            document.getElementById('email').value = 'admin@resume.ai';
+            document.getElementById('password').value = 'password123';
+
+            // Visual feedback
+            const btn = document.getElementById('demoLoginBtn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Credentials Filled! 🚀';
+            setTimeout(() => {
+                btn.textContent = originalText;
+            }, 2000);
+
+            // Highlight inputs
+            document.querySelectorAll('.form-input').forEach(input => {
+                if (input.value) {
+                    input.parentElement.querySelector('.input-icon').style.color = 'var(--primary-color)';
+                    input.classList.add('fade-in');
+                }
+            });
+        });
+
+        // Google Social Login Logic
+        document.getElementById('btnGoogle').addEventListener('click', function () {
+            const btn = this;
+            const originalContent = btn.innerHTML;
+
+            // Loading State
+            btn.innerHTML = `
+                <svg class="animate-spin" style="animation: spin 1s linear infinite; width: 20px; height: 20px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Connecting...
+            `;
+            btn.style.opacity = '0.8';
+            btn.style.cursor = 'wait';
+
+            setTimeout(() => {
+                // Mock Google User Data
+                const googleUser = {
+                    name: "Google User",
+                    email: "user@gmail.com",
+                    isGoogleLogin: true,
+                    avatar: "https://lh3.googleusercontent.com/a/default-user" // Placeholder
+                };
+
+                // Save session
+                localStorage.setItem('currentUser', JSON.stringify(googleUser));
+
+                // Add to users list if new
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (!users.find(u => u.email === googleUser.email)) {
+                    users.push(googleUser);
+                    localStorage.setItem('users', JSON.stringify(users));
+                }
+
+                // Redirect
+                window.location.href = 'index.html';
+            }, 1500);
+        });
+
+        // Interactive inputs
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('.input-icon').style.color = 'var(--primary-color)';
+            });
+            input.addEventListener('blur', () => {
+                if (input.value === '') {
+                    input.parentElement.querySelector('.input-icon').style.color = 'var(--f-text-secondary)';
+                }
+            });
+        });
+
+        // Toggle Auth Mode (Login / Signup)
+        const formTitle = document.getElementById('formTitle');
+        const formSubtitle = document.getElementById('formSubtitle');
+        const submitBtn = document.getElementById('submitBtn');
+        const nameGroup = document.getElementById('nameGroup');
+        const loginOptions = document.getElementById('loginOptions');
+        const toggleText = document.getElementById('toggleText');
+
+        let isLoginMode = true;
+
+        // Use event delegation on the footer text container
+        toggleText.addEventListener('click', function (e) {
+            if (e.target.classList.contains('login-link')) {
+                e.preventDefault();
+                isLoginMode = !isLoginMode;
+                updateAuthView();
+            }
+        });
+
+        function toggleOnboardingFields() {
+            const userType = document.querySelector('input[name="userType"]:checked').value;
+            const studentFields = document.getElementById('studentFields');
+            const generalFields = document.getElementById('generalFields');
+
+            if (userType === 'student') {
+                studentFields.classList.remove('hidden');
+                generalFields.classList.add('hidden');
+            } else {
+                studentFields.classList.add('hidden');
+                generalFields.classList.remove('hidden');
+            }
+        }
+
+        function calculateAge(dobString) {
+            if (!dobString) return null;
+            const dob = new Date(dobString);
+            const diff_ms = Date.now() - dob.getTime();
+            const age_dt = new Date(diff_ms);
+            return Math.abs(age_dt.getUTCFullYear() - 1970);
+        }
+
+        function updateAuthView() {
+            if (!isLoginMode) {
+                // Switch to Sign Up
+                formTitle.textContent = "Create Account";
+                formSubtitle.textContent = "Join thousands of professionals today";
+                submitBtn.textContent = "Sign Up Free";
+
+                nameGroup.classList.remove('hidden');
+                nameGroup.classList.add('fade-in');
+
+                // Show onboarding fields on signup
+                document.getElementById('typeGroup').classList.remove('hidden');
+                toggleOnboardingFields();
+
+                loginOptions.classList.add('hidden');
+
+                toggleText.innerHTML = 'Already have an account? <a href="#" class="login-link">Sign in</a>';
+            } else {
+                // Switch to Login
+                formTitle.textContent = "Welcome Back";
+                formSubtitle.textContent = "Enter your credentials to access your account";
+                submitBtn.textContent = "Sign In";
+
+                nameGroup.classList.add('hidden');
+
+                // Hide onboarding fields on login
+                document.getElementById('typeGroup').classList.add('hidden');
+                document.getElementById('studentFields').classList.add('hidden');
+                document.getElementById('generalFields').classList.add('hidden');
+
+                loginOptions.classList.remove('hidden');
+                loginOptions.classList.add('fade-in');
+
+                toggleText.innerHTML = 'Don\'t have an account? <a href="#" class="login-link">Sign up</a>';
+            }
+        }
+
+        // OTP / Verification Logic Removed
+        let pendingUser = null;
+
+        function completeLogin() {
+            // Get selected user type
+            const userType = document.querySelector('input[name="userType"]:checked').value;
+            // Add role and specific details to user object
+            if (pendingUser) {
+                pendingUser.role = userType;
+
+                if (userType === 'student') {
+                    const dob = document.getElementById('dob').value;
+                    pendingUser.dob = dob;
+                    pendingUser.age = calculateAge(dob);
+                    pendingUser.eduLevel = document.getElementById('eduLevel').value;
+                    pendingUser.institution = document.getElementById('institution').value;
+                } else {
+                    pendingUser.profession = document.getElementById('profession').value;
+                    pendingUser.experience = document.getElementById('experience').value;
+                    pendingUser.expectations = document.getElementById('expectations').value;
+                }
+            }
+
+            // Save Session
+            localStorage.setItem('currentUser', JSON.stringify(pendingUser));
+
+            // Update database if new user (Signup flow)
+            if (!isLoginMode) {
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                users.push(pendingUser);
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+
+            // Check if user came from a template
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirect = urlParams.get('redirect');
+            if (redirect) {
+                window.location.href = redirect;
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+
+        // ==========================================
+        // Modified Auth Logic
+        // ==========================================
+
+        // Form Submission & Validation Logic
+        const errorMsg = document.getElementById('errorMsg');
+        const errorText = document.getElementById('errorText');
+
+        // Initial Mock Database
+        if (!localStorage.getItem('users')) {
+            const defaultUsers = [
+                { email: 'admin@resume.ai', password: 'password123', name: 'Admin User' },
+                { email: 'user@example.com', password: 'password123', name: 'Test User' } // Easy test user
+            ];
+            localStorage.setItem('users', JSON.stringify(defaultUsers));
+        }
+
+        function showError(message) {
+            errorMsg.classList.remove('hidden');
+            errorMsg.style.display = 'flex'; // Ensure flex display for icon alignment
+            errorText.textContent = message;
+
+            // Shake animation reset
+            errorMsg.style.animation = 'none';
+            errorMsg.offsetHeight; /* trigger reflow */
+            errorMsg.style.animation = 'shake 0.5s ease-in-out';
+        }
+
+        function hideError() {
+            errorMsg.classList.add('hidden');
+            errorMsg.style.display = 'none';
+        }
+
+        document.getElementById('authForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            hideError();
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const name = document.getElementById('name').value.trim();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+
+            // 1. Strict Format Validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                return showError("Please enter a valid email address.");
+            }
+            if (password.length < 8) {
+                return showError("Password must be at least 8 characters long.");
+            }
+
+            // Show loading state
+            submitBtn.textContent = isLoginMode ? 'Verifying...' : 'Creating Account...';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+
+            // --- Supabase Integration ---
+            const supabase = window.supabaseApp.client;
+            const isSupabaseConfigured = !supabase.supabaseUrl.includes('placeholder');
+
+            if (isSupabaseConfigured) {
+                try {
+                    let result;
+                    if (isLoginMode) {
+                        result = await supabase.auth.signInWithPassword({ email, password });
+                    } else {
+                        result = await supabase.auth.signUp({
+                            email,
+                            password,
+                            options: { data: { full_name: name || 'New User' } }
+                        });
+                    }
+
+                    if (result.error) throw result.error;
+
+                    if (result.data.user) {
+                        pendingUser = {
+                            id: result.data.user.id,
+                            email: result.data.user.email,
+                            name: result.data.user.user_metadata?.full_name || name || 'User',
+                            isSupabase: true
+                        };
+                        completeLogin();
+                        return;
+                    }
+                } catch (err) {
+                    console.error('Supabase Auth Error:', err);
+                    resetButton();
+                    return showError(err.message || "Authentication failed. Check your Supabase settings.");
+                }
+            }
+
+            // --- Fallback Local Mock Logic ---
+            setTimeout(() => {
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (isLoginMode) {
+                    const user = users.find(u => u.email === email && u.password === password);
+                    if (user) {
+                        pendingUser = user;
+                        completeLogin();
+                    } else {
+                        resetButton();
+                        showError("Invalid email or password. (Supabase is not configured, using local mock)");
+                    }
+                } else {
+                    if (users.find(u => u.email === email)) {
+                        resetButton();
+                        return showError("An account with this email already exists.");
+                    }
+                    pendingUser = { email, password, name: name || 'New User', createdAt: new Date().toISOString() };
+                    completeLogin();
+                }
+            }, 800);
+        });
+
+        function resetButton() {
+            const btn = document.getElementById('submitBtn');
+            btn.textContent = isLoginMode ? 'Sign In' : 'Sign Up Free';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+        }
+    </script>
+</body>
+
+</html>

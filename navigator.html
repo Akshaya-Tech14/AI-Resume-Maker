@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeAI Pro - Page Navigator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+        }
+
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .page-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .page-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .page-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #1a1a2e;
+        }
+
+        .page-description {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-features li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .page-features li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .page-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .page-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .page-card.page-1 {
+            border-top: 4px solid #667eea;
+        }
+
+        .page-card.page-2 {
+            border-top: 4px solid #f093fb;
+        }
+
+        .page-card.page-3 {
+            border-top: 4px solid #4facfe;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-section p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 1024px) {
+            .pages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 ResumeAI Pro - Page Navigator</h1>
+            <p>Choose a page to explore your AI-powered resume maker</p>
+        </div>
+
+        <div class="pages-grid">
+            <!-- Page 1: Welcome -->
+            <a href="index.html" class="page-card page-1">
+                <div class="page-icon">🏠</div>
+                <h2 class="page-title">1. Welcome Page</h2>
+                <p class="page-description">
+                    The stunning landing page with premium animations and graphics.
+                </p>
+                <ul class="page-features">
+                    <li>Falling stars animation</li>
+                    <li>Glassmorphism UI</li>
+                    <li>Hero section</li>
+                    <li>Features showcase</li>
+                    <li>Clean resume preview</li>
+                </ul>
+                <button class="page-button">Start Here →</button>
+            </a>
+
+            <!-- Page 2: Success -->
+            <a href="success.html" class="page-card page-3">
+                <div class="page-icon">🎉</div>
+                <h2 class="page-title">2. Success Demo</h2>
+                <p class="page-description">
+                    See what you'll achieve - motivation and inspiration first!
+                </p>
+                <ul class="page-features">
+                    <li>Falling stars background</li>
+                    <li>Animated checkmark</li>
+                    <li>Confetti celebration</li>
+                    <li>Download options</li>
+                    <li>Next steps guide</li>
+                </ul>
+                <button class="page-button">Get Inspired →</button>
+            </a>
+
+            <!-- Page 3: ATS Analysis -->
+            <a href="ats-analysis.html" class="page-card page-2">
+                <div class="page-icon">📊</div>
+                <h2 class="page-title">3. ATS Analysis</h2>
+                <p class="page-description">
+                    Deep dive into features - check your resume's ATS score.
+                </p>
+                <ul class="page-features">
+                    <li>Animated score circle</li>
+                    <li>Keyword analysis boxes</li>
+                    <li>Found vs Missing keywords</li>
+                    <li>Recommendations</li>
+                    <li>Score breakdown</li>
+                </ul>
+                <button class="page-button">Explore Features →</button>
+            </a>
+        </div>
+
+        <div class="info-section">
+            <h2>✨ All Pages Feature</h2>
+            <p>
+                Premium graphics • Smooth animations • Responsive design • Modern UI •
+                Professional typography • Interactive elements • Glassmorphism effects
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

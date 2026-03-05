@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Templates - ResumeAI Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resume-showcase.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .page-header {
+            padding: 8rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .filter-bar {
+            max-width: 1280px;
+            margin: 0 auto 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--f-border);
+            color: var(--f-text-secondary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            color: white;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .templates-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+    </style>
+</head>
+
+<body class="futuristic-dark-page">
+    <div class="noise-overlay"></div>
+    <div class="grain-overlay"></div>
+
+    <nav class="navbar futuristic">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z" fill="#fff" />
+                </svg>
+                <span class="logo-text">ResumeAI Pro <span class="version">v2.0</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="templates.html" class="active">Templates</a>
+                <a href="profile.html">Profile</a>
+            </div>
+            <div class="nav-actions">
+                <!-- script.js will handle this -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1 class="section-title">Professional Templates</h1>
+        <p class="section-description">Choose from 15+ ATS-optimized designs</p>
+    </div>
+
+    <div class="filter-bar">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Creative</button>
+        <button class="filter-btn">Professional</button>
+        <button class="filter-btn">Modern</button>
+        <button class="filter-btn">Simple</button>
+    </div>
+
+    <div class="templates-container">
+        <div class="showcase-grid">
+            <!-- Featured Impressive Template -->
+            <div class="template-card f-card featured" data-category="professional"
+                style="grid-column: span 2; border: 2px solid var(--primary-color);">
+                <div class="template-preview monitor-style" style="height: 350px; background: #1a1a2e;">
+                    <div class="screen-content"
+                        style="display:grid; grid-template-columns: 35% 65%; height:100%; padding:0;">
+                        <div style="background:#1a1a2e; height:100%;"></div>
+                        <div style="background:#fff; height:100%;"></div>
+                    </div>
+                    <div class="featured-badge"
+                        style="position:absolute; top:1rem; right:1rem; background:var(--primary-gradient); padding:0.4rem 1rem; border-radius:50px; font-size:0.7rem; font-weight:bold; color:white; box-shadow:0 5px 15px rgba(102,126,234,0.4);">
+                        NEW & PREMIUM</div>
+                </div>
+                <div class="template-info"
+                    style="display:flex; justify-content:space-between; align-items:center; padding:1.5rem;">
+                    <div>
+                        <h3 style="font-size:1.4rem; color:white;">Executive Premium</h3>
+                        <p style="color:var(--f-text-secondary); font-size:0.9rem;">High-impact design for leadership
+                            roles</p>
+                    </div>
+                    <button class="btn-primary" onclick="window.location.href='editor.html?template=executive-premium'"
+                        style="padding:0.8rem 2rem;">Use Premium Template</button>
+                </div>
+            </div>
+
+            <!-- Template 1 -->
+            <div class="template-card f-card" data-category="modern">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-modern"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Modern Tech</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=modern'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 2 -->
+            <div class="template-card f-card" data-category="creative">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-creative"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Creative Director</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=creative'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 3 -->
+            <div class="template-card f-card" data-category="professional">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-executive"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Executive Pro</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=professional'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 4 -->
+            <div class="template-card f-card" data-category="simple">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-modern" style="border-left: 5px solid #667eea;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Minimalist Blue</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=simple'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 5 -->
+            <div class="template-card f-card" data-category="professional">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-executive" style="background: #eef;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Clean Corporate</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=professional'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 6 -->
+            <div class="template-card f-card" data-category="creative">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-creative" style="border-color: #ffd700;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Bold Yellow</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=creative'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 7 -->
+            <div class="template-card f-card" data-category="modern">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-modern" style="background: #111; color: white;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Dark Mode UI</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=modern'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 8 -->
+            <div class="template-card f-card" data-category="professional">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-executive" style="border-top-color: #ff4444;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Red Accent</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=professional'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 9 -->
+            <div class="template-card f-card" data-category="simple">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-modern" style="border-radius: 0;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Squared Off</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=simple'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 10 -->
+            <div class="template-card f-card" data-category="creative">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-creative" style="border-left-width: 20px;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Sidebar Focus</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=creative'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 11 -->
+            <div class="template-card f-card" data-category="simple">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-modern" style="background: linear-gradient(to bottom, #fff, #eee);">
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h3>Simple Gradient</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=simple'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 12 -->
+            <div class="template-card f-card" data-category="professional">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-executive" style="font-family: serif;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Serif Classic</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=professional'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 13 -->
+            <div class="template-card f-card" data-category="creative">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-creative"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Artistic Flair</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=creative'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 14 -->
+            <div class="template-card f-card" data-category="modern">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-modern" style="border: 2px solid #333;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Bordered Edge</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=modern'">Use Template</button>
+                </div>
+            </div>
+            <!-- Template 15 -->
+            <div class="template-card f-card" data-category="simple">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content bg-executive" style="background: #fdf6e3;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Warm Paper</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=simple'">Use Template</button>
+                </div>
+            </div>
+            <!-- New Template 16: Futuristic Tech -->
+            <div class="template-card f-card" data-category="modern">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content"
+                        style="background: #0a0a1a; border: 1px solid #00ff88; box-shadow: 0 0 10px #00ff88;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Futuristic Tech</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=futuristic-tech'">Use Template</button>
+                </div>
+            </div>
+            <!-- New Template 17: Academic CV -->
+            <div class="template-card f-card" data-category="professional">
+                <div class="template-preview monitor-style">
+                    <div class="screen-content" style="background: #fff; border-top: 10px solid #2c3e50;"></div>
+                </div>
+                <div class="template-info">
+                    <h3>Academic CV</h3><button class="btn-minimal full-width"
+                        onclick="window.location.href='editor.html?template=professional'">Use Template</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- New Template 18: Graduate Research -->
+    <div class="template-card f-card" data-category="professional">
+        <div class="template-preview monitor-style">
+            <div class="screen-content" style="background: #fff; border-bottom: 5px solid #3498db;"></div>
+        </div>
+        <div class="template-info">
+            <h3>Graduate Research</h3><button class="btn-minimal full-width"
+                onclick="window.location.href='editor.html?template=professional'">Use Template</button>
+        </div>
+    </div>
+    <!-- Template 19: Marketing Pro -->
+    <div class="template-card f-card" data-category="creative">
+        <div class="template-preview monitor-style">
+            <div class="screen-content" style="background: #fff; border-left: 15px solid #e67e22;"></div>
+        </div>
+        <div class="template-info">
+            <h3>Marketing Pro</h3><button class="btn-minimal full-width"
+                onclick="window.location.href='editor.html?template=creative'">Use Template</button>
+        </div>
+    </div>
+    <!-- Template 20: Engineering Minimal -->
+    <div class="template-card f-card" data-category="modern">
+        <div class="template-preview monitor-style">
+            <div class="screen-content" style="background: #f4f4f4; border-right: 5px solid #2ecc71;"></div>
+        </div>
+        <div class="template-info">
+            <h3>Engineering Minimal</h3><button class="btn-minimal full-width"
+                onclick="window.location.href='editor.html?template=modern'">Use Template</button>
+        </div>
+    </div>
+    <!-- Template 21: Legal Advisor -->
+    <div class="template-card f-card" data-category="professional">
+        <div class="template-preview monitor-style">
+            <div class="screen-content" style="background: #fff; font-family:serif;"></div>
+        </div>
+        <div class="template-info">
+            <h3>Legal Advisor</h3><button class="btn-minimal full-width"
+                onclick="window.location.href='editor.html?template=professional'">Use Template</button>
+        </div>
+    </div>
+    <!-- Template 22: UI/UX Bold -->
+    <div class="template-card f-card" data-category="creative">
+        <div class="template-preview monitor-style">
+            <div class="screen-content" style="background: #2c3e50; border-top: 15px solid #9b59b6;"></div>
+        </div>
+        <div class="template-info">
+            <h3>UI/UX Bold</h3><button class="btn-minimal full-width"
+                onclick="window.location.href='editor.html?template=creative'">Use Template</button>
+        </div>
+    </div>
+    <!-- Template 23: Sales Executive -->
+    <div class="template-card f-card" data-category="professional">
+        <div class="template-preview monitor-style">
+            <div class="screen-content" style="background: #fff; padding: 20px; border: 1px solid #eee;"></div>
+        </div>
+        <div class="template-info">
+            <h3>Sales Executive</h3><button class="btn-minimal full-width"
+                onclick="window.location.href='editor.html?template=professional'">Use Template</button>
+        </div>
+    </div>
+
+    <!-- New Template 24: Global Elite (Professional) -->
+    <div class="template-card f-card" data-category="professional">
+        <div class="template-preview monitor-style">
+            <div class="screen-content"
+                style="background: #fff; border-top: 15px solid #1e3a8a; border-left: 2px solid #eee; border-right: 2px solid #eee;">
+            </div>
+        </div>
+        <div class="template-info">
+            <h3>Global Elite</h3><button class="btn-minimal full-width"
+                onclick="window.location.href='editor.html?template=global-elite'">Use Template</button>
+        </div>
+    </div>
+
+    <!-- Enhanced Industry Section -->
+    <div class="multicolor-glow" style="grid-column: 1 / -1; margin-top: 2rem; border-radius: 16px; overflow: hidden;">
+
+        <div
+            style="text-align: center; padding: 5rem 2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; background: rgba(10, 10, 20, 0.8); backdrop-filter: blur(20px);">
+            <h3 class="rainbow-breathing" style="font-size: 2.2rem; margin-bottom: 1rem; font-weight: 800;">+25 More
+                Industry-Specific Templates</h3>
+            <p
+                style="color: var(--f-text-secondary); margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Our elite database contains 40+ hand-crafted resumes from top industry recruiters at Google, Meta, and
+                Goldman Sachs.
+            </p>
+
+            <div
+                style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <span class="skill-tag"
+                    style="background: rgba(255,255,255,0.05); padding: 0.6rem 1.2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px;">Data
+                    Science</span>
+                <span class="skill-tag"
+                    style="background: rgba(255,255,255,0.05); padding: 0.6rem 1.2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px;">Cybersecurity</span>
+                <span class="skill-tag"
+                    style="background: rgba(255,255,255,0.05); padding: 0.6rem 1.2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px;">FinTech</span>
+                <span class="skill-tag"
+                    style="background: rgba(255,255,255,0.05); padding: 0.6rem 1.2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px;">Medical/Nursing</span>
+                <span class="skill-tag"
+                    style="background: rgba(255,255,255,0.05); padding: 0.6rem 1.2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px;">AI
+                    Engineering</span>
+                <span class="skill-tag"
+                    style="background: rgba(255,255,255,0.05); padding: 0.6rem 1.2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px;">Legal
+                    & Compliance</span>
+                <span class="skill-tag"
+                    style="background: rgba(255,255,255,0.05); padding: 0.6rem 1.2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px;">Supply
+                    Chain</span>
+            </div>
+
+            <button class="btn-hero-create multicolor-glow" style="padding: 1.2rem 3rem;"
+                onclick="window.location.href='editor.html'">
+                Unlock Full Library Access
+            </button>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            if (typeof createSnowfall === 'function') {
+                createSnowfall();
+            }
+
+            // --- Filtering Logic ---
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const templateCards = document.querySelectorAll('.template-card');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button state
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const categoryText = btn.textContent.trim().toLowerCase();
+
+                    templateCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+
+                        // Small fix for categories
+                        if (categoryText === 'all' || cardCategory === categoryText) {
+                            card.style.display = 'block';
+                            card.animate([
+                                { opacity: 0, transform: 'translateY(10px)' },
+                                { opacity: 1, transform: 'translateY(0)' }
+                            ], { duration: 300, easing: 'ease-out' });
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,380 @@
+{
+    "info": {
+        "name": "ResumeAI Pro API",
+        "description": "Complete API collection for ResumeAI Pro - AI-Powered Resume Maker",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:5000/api",
+            "type": "string"
+        },
+        {
+            "key": "token",
+            "value": "",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Authentication",
+            "item": [
+                {
+                    "name": "Register User",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/auth/register",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "register"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Login User",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/auth/login",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Current User",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/auth/me",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "me"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Resumes",
+            "item": [
+                {
+                    "name": "Get All Resumes",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/resumes?page=1&limit=10",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "resumes"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Resume",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"title\": \"Software Engineer Resume\",\n  \"personalInfo\": {\n    \"fullName\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"phone\": \"+1234567890\",\n    \"location\": \"San Francisco, CA\",\n    \"linkedin\": \"linkedin.com/in/johndoe\"\n  },\n  \"summary\": \"Experienced software engineer with 5+ years in full-stack development\",\n  \"experience\": [\n    {\n      \"jobTitle\": \"Senior Software Engineer\",\n      \"company\": \"Tech Corp\",\n      \"location\": \"San Francisco, CA\",\n      \"startDate\": \"2020-01-01\",\n      \"current\": true,\n      \"responsibilities\": [\n        \"Led team of 5 developers\",\n        \"Built scalable microservices\"\n      ]\n    }\n  ],\n  \"skills\": {\n    \"technical\": [\"JavaScript\", \"React\", \"Node.js\", \"MongoDB\"]\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/resumes",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "resumes"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Resume",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"summary\": \"Updated professional summary\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/resumes/:resumeId",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "resumes",
+                                ":resumeId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "resumeId",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "AI Features",
+            "item": [
+                {
+                    "name": "Enhance Bullet Point",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"text\": \"Worked on frontend development\",\n  \"jobTitle\": \"Frontend Developer\",\n  \"targetRole\": \"Senior Frontend Engineer\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/ai/enhance-bullet",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "ai",
+                                "enhance-bullet"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Generate Summary",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"targetRole\": \"Senior Software Engineer\",\n  \"yearsOfExperience\": 5,\n  \"skills\": [\"JavaScript\", \"React\", \"Node.js\", \"AWS\"],\n  \"experience\": \"Led development of microservices architecture\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/ai/generate-summary",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "ai",
+                                "generate-summary"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Suggest Keywords",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jobDescription\": \"We are looking for a Senior Full Stack Developer with expertise in React, Node.js, and AWS...\",\n  \"currentSkills\": [\"JavaScript\", \"HTML\", \"CSS\"]\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/ai/suggest-keywords",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "ai",
+                                "suggest-keywords"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ATS Checker",
+            "item": [
+                {
+                    "name": "Check ATS Score",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/ats/check/:resumeId",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "ats",
+                                "check",
+                                ":resumeId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "resumeId",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Analyze Job Match",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jobDescription\": \"Full job description text here...\",\n  \"resumeId\": \"your_resume_id_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/ats/analyze-job",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "ats",
+                                "analyze-job"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Templates",
+            "item": [
+                {
+                    "name": "Get All Templates",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{baseUrl}}/templates",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "templates"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
